@@ -1,10 +1,276 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Recipes </title>
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!----------------------------------------------->
+    <!--  Meta tag for rendering on mobile devices -->
+    <!----------------------------------------------->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!----------------------------------------------->
+    <!-- CSS: Bootstrap, Firebase, other API -->
+    <!----------------------------------------------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <!------------------------>
+    <!-- Your own CSS files -->
+    <!------------------------>
+    <link rel="stylesheet" href="style/style.css">
+
+
 </head>
+
 <body>
-    <p> <a href="spaghetti-recipe.html"> Spaghetti-recipe </a></span></p>
+    <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Fresh Recipe</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="learn.html">Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Recipe.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id='menu' class="allcontainer">
+        <div class='container'>
+            <div class='row'>
+                <div class='col-12'>
+                    <div id="whitespace">
+                        <h3> Find your fresh recipe! </h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                                data-toggle="dropdown">Popular</button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Popular</a>
+                                <a href="#" class="dropdown-item">Recent</a>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control">
+                        <button type="button" class="btn btn-secondary"> Search
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/spaghetti.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Meatballs Spaghetti</h5>
+                                    <h6>with Basil &amp; Grinded cheese</h6>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/macncheese.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Meatballs Spaghetti</h5>
+                                    <h6>with Basil &amp; Grinded cheese</h6>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/macncheese.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/chowmein.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/spaghetti.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/spaghetti.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/spaghetti.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/spaghetti.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/spaghetti.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-6">
+                            <div class="recipe">
+                                <a href="spaghetti-recipe.html">
+                                    <img src="images/spaghetti.jpg" class="d-block w-100" id="foodimg">
+                                    <h5>Spaghetti and Meatballs</h5>
+                                    <h5>with Basil &amp; Grinded cheese</h5>
+                                    <div class="time">
+                                        <p>
+                                            30 min
+                                        </p>
+                                    </div>
+
+                                </a> </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!----------------------------------------------->
+                <!-- JS: Boostrap, Firebase, API related    -->
+                <!----------------------------------------------->
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+                <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+                <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
+
+
+
 </body>
+
 </html>

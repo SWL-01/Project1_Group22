@@ -35,4 +35,26 @@
     top: 40%;
 }
 
-/*  */
+/*Recipe STYLE */
+.recipe {
+    width: 300px;
+    height: 500px;
+    text-decoration: "none";
+}
+
+.time {
+    font-size: 15px;
+}
+#foodimg {
+    height: 20rem;
+}
+
+#whitespace {
+    height: 7rem;
+}
+.allcontainer {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -20%);
+}
