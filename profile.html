@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
+    <title>Profile</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -27,9 +27,37 @@
     <!----------------------->
     <!--  HTML Section -->
     <!----------------------->
-
-    <h1>Welcome Bob The Builder</h1>
-    <p>This is the profile page.</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+        <a class="navbar-brand" href="#">Fresh Recipe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="learn.html">Learn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="recipes.html">Recipes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="community.html">Community</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
 
     <!----------------------------------------------->
     <!--   JS: Boostrap, Firebase, API related     -->
@@ -52,7 +80,32 @@
      <!--------------------------------------------------------------------->
     <!-- Make calls to your own JavaScript functions, here below-->
     <!---------------------------------------------------------------------->
+    
+    <script>
+        let userid;
 
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                // User is signed in.
+                var user = firebase.auth().currentUser;
+                if (user != null) {
+                    userid = user.uid;
+
+                    db.collection('users').doc(userid).onSnapshot(
+                    function(snapshot){
+                        console.log(snapshot.data());
+                        // do smt
+                        document.getElementById('jumbo-h').innerHTML = "Hello " + snapshot.data().name + ",";
+                        document.getElementById('jumbo-p').innerHTML = "You have completed " + snapshot.data().recipesCompleted + " recipes.";
+                    }
+                );
+            console.log(userid);
+            }
+            } else {
+         // No user is signed in.
+        }
+    });
+    </script>
 
 </body>
 </html>     
