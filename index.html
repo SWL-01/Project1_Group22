@@ -42,9 +42,6 @@
                 </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="learn.html">Learn</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="Recipe.html">Recipes</a>
           </li>
           <li class="nav-item">
@@ -185,6 +182,9 @@
     <!---------------------------------------------------------------------->
     <script>
       let userid;
+      let ipRecipeName;
+      let ipRecipeProgress;
+      let ipRecipeID;
 
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -196,12 +196,28 @@
             db.collection('users').doc(userid).onSnapshot(
               function(snapshot){
                 console.log(snapshot.data());
-                // do smt
                 document.getElementById('jumbo-h').innerHTML = "Hello " + snapshot.data().name + ",";
-                document.getElementById('jumbo-p').innerHTML = "You have completed " + snapshot.data().recipesCompleted + " recipes.";
-                document.getElementById('jumbo-btn').innerHTML = "Learn!";
+                document.getElementById('jumbo-p').innerHTML = "You have completed " + snapshot.data().recipesCompleted + " recipes. <br>"; 
+                document.getElementById('jumbo-btn').innerHTML = "Continue!";
+                document.getElementById('jumbo-btn').href = "recipe.html";
               }
             );
+
+            // loop and check for recipes in progress   
+            db.collection('users').doc(userid).collection('RecipesLog').get().then(function(querySnapshot) {
+              querySnapshot.forEach(function(doc) {
+                // doc.data() is never undefined for query doc snapshots
+                if(doc.data().percentCompleted < 100){
+                  ipRecipeName = doc.data().recipeName;
+                  ipRecipeProgress = doc.data().percentCompleted;
+                  ipRecipeID = doc.id;
+                }
+              });
+              // stores recipe id into local storage
+              localStorage.setItem('recipeID', ipRecipeID);
+              document.getElementById('jumbo-p').innerHTML += "You have completed " + ipRecipeProgress + "% of the " + ipRecipeName + " recipe.";
+            });          
+
             console.log(userid);
           }
         } else {
