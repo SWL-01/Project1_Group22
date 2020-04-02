@@ -35,7 +35,15 @@
     top: 40%;
 }
 
-/*Recipe STYLE */
+#rule-1, #rule-2, #rule-3{
+    margin-bottom: -10px;
+}
+
+#bannerimg{
+    opacity: 80%;
+}
+
+/*RECIPES STYLE */
 .recipe {
     width: 300px;
     height: 500px;
@@ -57,4 +65,9 @@
     left: 50%;
     top: 90%;
     transform: translate(-50%, -20%);
+}
+
+/* COMMUNITY STYLE */
+#view-btn{
+    margin-bottom: -25px;;
 }
