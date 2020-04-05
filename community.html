@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
 
-    <!----------------------------------------------->
-    <!--  Meta tag for rendering on mobile devices -->
-    <!----------------------------------------------->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!----------------------------------------------->
-    <!-- CSS: Bootstrap, Firebase, other API -->
-    <!----------------------------------------------->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-   
-    <!------------------------>
-    <!-- Your own CSS files -->
-    <!------------------------>
-    <link rel="stylesheet" href="style/style.css">
+  <!----------------------------------------------->
+  <!--  Meta tag for rendering on mobile devices -->
+  <!----------------------------------------------->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!----------------------------------------------->
+  <!-- CSS: Bootstrap, Firebase, other API -->
+  <!----------------------------------------------->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+  <!------------------------>
+  <!-- Your own CSS files -->
+  <!------------------------>
+  <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
-    <!----------------------->
-    <!--  HTML Section -->
-    <!----------------------->
 
-    <!-- Navigation Bar -->
+<body>
+  <!----------------------->
+  <!--  HTML Section -->
+  <!----------------------->
+
+  <!-- Navigation Bar -->
   <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">Fresh Recipe</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home
-                  <span class="sr-only">(current)</span>
-                </a>
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="recipes.html">Recipes</a>
@@ -58,74 +62,126 @@
     </div>
   </nav>
 
-    <!-- Page Content (ADD YOUR CONTENT HERE) -->
-    <div id="jumbo" class="jumbotron">
-      <h1 id="jumbo-h" class="display-5">Hello there.</h1>
-      <a id="jumbo-btn" class="btn btn-success btn-lg" href="#" role="button">Post a comment</a>
-      
-      <div class="btn-group">
-        <button id="view-btn" class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          View a recipe's comments
-        </button>
-        <!-- dropdown items -->
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Macaroni and Cheese</a>
-          <a class="dropdown-item" href="#">Spaghetti and Meatballs</a>
-          <a class="dropdown-item" href="#">Chicken Chow Mein</a>
+  <!-- Page Content (ADD YOUR CONTENT HERE) -->
+
+  <!-- menu container -->
+  <div id="jumbo" class="jumbotron">
+    <h1 id="jumbo-h" class="display-5">Hello there.</h1>
+
+    <!-- "post button" triggers modal -->
+    <button id="post-btn" type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#formModal">
+      Post a comment
+    </button>
+
+    <!-- "view a recipe's" comments button -->
+    <div class="btn-group">
+      <button id="view-btn" class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        View a recipe's comments
+      </button>
+
+      <!-- dropdown items, dynamically loaded -->
+      <div id="dropdown-items" class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+    </div>
+  </div>
+
+  <!-- comments table -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th id="current-recipe-view" colspan="4">No recipe selected.</th>
+      </tr>
+    </thead>
+    <!-- comment table header -->
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Posted</th>
+        <th scope="col" colspan="2">Comment</th>
+      </tr>
+    </thead>
+
+    <!-- comment table contents, dynamically loaded -->
+    <tbody id="comment-table">
+    </tbody>
+  </table>
+
+  <!-- post modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Compose a post</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- form body -->
+        <div class="modal-body">
+          <form>
+
+            <!-- username section -->
+            <div class="form-group">
+              <label id="post-cmt-name"></label>
+            </div>
+
+            <!-- posted time section -->
+            <div class="form-group">
+              <label id="post-cmt-time"></label>
+            </div>
+
+            <!-- recipe name section -->
+            <div class="form-group">
+              <label>Recipe name:</label>
+
+              <!-- recipe selections, dynamically loaded -->
+              <select id="post-cmt-recipes" class="form-control">
+              </select>
+            </div>
+            
+            <!-- comment section -->
+            <div class="form-group">
+              <label>Your comment:</label>
+              <textarea id="post-cmt-comment" class="form-control" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <!-- comment buttons section -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button id="post-cmt-btn" type="button" class="btn btn-success"  data-dismiss="modal">Post</button>
         </div>
       </div>
-    </div>    
+    </div>
+  </div>
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
-  
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here           -->
-    <!--------------------------------------------------------------------->
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 
-    <!---------------------------------------------------------------------->
-    <!-- Make calls to your own JavaScript functions, here below          -->
-    <!---------------------------------------------------------------------->
-    <script>
-      let userid;
-      let userName;
-      let ipRecipeName;
-      let ipRecipeProgress;
-      let ipRecipeID;
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
 
-      let viewBool;
-
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var user = firebase.auth().currentUser;
-          if (user != null) {
-            userid = user.uid;
-
-            db.collection('users').doc(userid).onSnapshot(
-              function(snapshot){
-                console.log(snapshot.data());
-                document.getElementById('jumbo-h').innerHTML = "Hello " + snapshot.data().name + ", what would you like to do?";
-              }
-            );          
-
-            console.log(userid);
-          }
-        } else {
-        // No user is signed in.
-        }
-      });
-    </script>
-
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here           -->
+  <!--------------------------------------------------------------------->
+  <script src="scripts/community.js"></script>
 </body>
-</html>                            
+
+</html>
