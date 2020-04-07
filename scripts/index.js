@@ -62,7 +62,13 @@ function personalizeRecipe(uID) {
         console.log(ipRecipeID); // test log
        
         // personalization.
-        document.getElementById('jumbo-p').innerHTML += "You have completed " + ipRecipeProgress + "% of the " + ipRecipeName + " recipe.";
+        if (ipRecipeID == undefined){
+            // document.getElementById('jumbo-p').innerHTML = "";
+            document.getElementById('jumbo-btn').innerHTML = "Start!";
+            document.getElementById('jumbo-btn').href = "recipes.html";
+        } else {
+            document.getElementById('jumbo-p').innerHTML += "You have completed " + ipRecipeProgress + "% of the " + ipRecipeName + " recipe.";
+        }
     });
 }
 
