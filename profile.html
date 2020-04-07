@@ -1,108 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Profile</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
 
-    <!----------------------------------------------->
-    <!--  Meta tag for rendering on mobile devices -->
-    <!----------------------------------------------->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!----------------------------------------------->
-    <!-- CSS: Bootstrap, Firebase, other API -->
-    <!----------------------------------------------->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-   
-    <!------------------------>
-    <!-- Your own CSS files -->
-    <!------------------------>
-    <link href="style/style.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>Profile</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!----------------------------------------------->
+  <!--  Meta tag for rendering on mobile devices -->
+  <!----------------------------------------------->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!----------------------------------------------->
+  <!-- CSS: Bootstrap, Firebase, other API -->
+  <!----------------------------------------------->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+  <!------------------------>
+  <!-- Your own CSS files -->
+  <!------------------------>
+  <link href="style/style.css" rel="stylesheet">
 
 </head>
+
 <body>
-    <!----------------------->
-    <!--  HTML Section -->
-    <!----------------------->
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-        <a class="navbar-brand" href="index.html">Fresh Recipe</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="recipes.html">Recipes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="community.html">Community</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="profile.html">Profile</a>
-            </li>
-            </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
+  <!----------------------->
+  <!--  HTML Section -->
+  <!----------------------->
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Fresh Recipe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="recipes.html">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!----------------------------------------------->
-    <!--   JS: Boostrap, Firebase, API related     -->
-    <!----------------------------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <div>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmw9yklita-Wo3seLZ7GFYv_QrKmuWAQb7sBkzk65Ze8m3D5jr&usqp=CAU"
+      class="rounded-circle lag-fixed" id="profilePic">
+    <p id="username" class="lead"></p>
+    <p id="recipesInProgress"></p>
+  </div>
+  <!----------------------------------------------->
+  <!--   JS: Boostrap, Firebase, API related     -->
+  <!----------------------------------------------->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
-  
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
-    <script src="scripts/script.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
 
-     <!--------------------------------------------------------------------->
-    <!-- Make calls to your own JavaScript functions, here below-->
-    <!---------------------------------------------------------------------->
-    
-    <script>
-        let userid;
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
 
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                // User is signed in.
-                var user = firebase.auth().currentUser;
-                if (user != null) {
-                    userid = user.uid;
+  <!--------------------------------------------------------------------->
+  <!-- Make calls to your own JavaScript functions, here below-->
+  <!---------------------------------------------------------------------->
 
-                    db.collection('users').doc(userid).onSnapshot(
-                    function(snapshot){
-                        console.log(snapshot.data());
-                        // do smt
-                        document.getElementById('jumbo-h').innerHTML = "Hello " + snapshot.data().name + ",";
-                        document.getElementById('jumbo-p').innerHTML = "You have completed " + snapshot.data().recipesCompleted + " recipes.";
-                    }
-                );
-            console.log(userid);
+  <script>
+    let userid;
+    let recipeProgress = " ";
+    let completedRecipes = " ";
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        var user = firebase.auth().currentUser;
+        if (user != null) {
+          userid = user.uid;
+
+          db.collection('users').doc(userid).onSnapshot(
+            function (snapshot) {
+              console.log(snapshot.data());
+              document.getElementById('username').innerHTML = snapshot.data().name;
             }
-            } else {
-         // No user is signed in.
+          );
+
+          // loop and check for recipes in progress   
+          db.collection('users').doc(userid).collection('recipesLog').get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              // doc.data() is never undefined for query doc snapshots
+              recipeProgress += "Inprogress Recipes:<br>"
+              if (doc.data().percentCompleted < 100) {
+                ipRecipeName = doc.data().recipeName;
+                ipRecipeProgress = doc.data().percentCompleted;
+                ipRecipeID = doc.id;
+                recipeProgress += ipRecipeName + "<br>Finished " + ipRecipeProgress + "% of the recipe.<br><br>";
+                newLink = document.createElement('a');
+              }
+              if(doc.data().percentCompleted == 100){
+                ipRecipeName = doc.data().recipeName;
+                ipRecipeID = doc.id;
+                recipeProgress += ipRecipeName
+              }
+            });
+            // stores recipe id into local storage
+            localStorage.setItem('recipeID', ipRecipeID);
+            console.log(ipRecipeID);
+            document.getElementById('recipesInProgress').innerHTML = recipeProgress
+          });
+
+          console.log(userid);
         }
+      } else {
+        // No user is signed in.
+      }
     });
-    </script>
+  </script>
 
 </body>
-</html>     
+
+</html>
