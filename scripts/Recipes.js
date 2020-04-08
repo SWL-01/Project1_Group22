@@ -1,7 +1,20 @@
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+
+        // if user is signed in, do...
+        let user = firebase.auth().currentUser;
+
+        if (user != null) {
+            userID = user.uid;
+        }
+    } else {
+        // if no user is signed in.
+    }
+});
+
 // function to save a recipe to recipeLogs
 function saveRecipe(recipeID) {
     let saved = false;
-    document.getElementById("save-notice").innerHTML = "";
 
     // check if recipeID exists in users recipesLog
     db.collection('users').doc(userID).collection('recipesLog').get().then(function (querySnapshot) {

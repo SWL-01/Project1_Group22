@@ -1,0 +1,248 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <meta name="comp1800 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
+
+    <!----------------------------------------------->
+    <!--  Meta tag for rendering on mobile devices -->
+    <!----------------------------------------------->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!----------------------------------------------->
+    <!-- CSS: Bootstrap, Firebase, other API -->
+    <!----------------------------------------------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <!------------------------>
+    <!-- Your own CSS files -->
+    <!------------------------>
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<body>
+    <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fresh Recipe</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Recipes.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="community.html">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class='row'>
+            <div class='col-12 col-sm-7 col-md-9 border-right px-md-0 titlec'>
+                <h1> Chicken Chow Mein </h1>
+                <!-- time icon -->
+                <svg class="bi bi-clock" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm8-7A8 8 0 110 8a8 8 0 0116 0z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M7.5 3a.5.5 0 01.5.5v5.21l3.248 1.856a.5.5 0 01-.496.868l-3.5-2A.5.5 0 017 9V3.5a.5.5 0 01.5-.5z"
+                        clip-rule="evenodd" />
+                </svg>
+                35 minutes <p> </p>
+                <!-- difficulty star icon -->
+                <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                Hard <p> </p>
+                <!-- location icon -->
+                <svg class="bi bi-cursor-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M14.082 2.182a.5.5 0 01.103.557L8.528 15.467a.5.5 0 01-.917-.007L5.57 10.694.803 8.652a.5.5 0 01-.006-.916l12.728-5.657a.5.5 0 01.556.103z"
+                        clip-rule="evenodd" />
+                </svg>
+                Chinese <p> </p>
+
+            </div>
+
+            <div class='col-12 d-block d-sm-none pb-3 px-1 py-5'>
+                <hr>
+            </div>
+            <img src="images/chowmein.jpg" id="titleimg">
+
+            <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5 py-3'>
+                <form class="button_to"><button class="btn btn-primary btn-block site-cta btn"
+                        onclick="saveRecipe('2')">Save recipe</button>
+                </form>
+            </div>
+            <div class='col-12 desc col-sm-10 col-md-9 px-3 px-md-0'>
+                <h6></h6>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-12 col-sm-7 col-md-9 border-right mb-sm-4 py-5'>
+                <div class='col-12 d-block d-sm-none pb-3 border-top px-3'>
+
+                    <hr>
+                </div>
+                <div class='row'>
+                    <div class='col-12 px-md-0 border-top px-3'>
+                        <h4>Ingredients</h4>
+                    </div>
+                    <div class='col-12 col-md-6 px-md-0'>
+                        <div>1 lb of chow mein noodles</div>
+                        <div class='gray'></div>
+                        <div>1 lb of chicken breasts, sliced</div>
+                        <div class='gray'></div>
+                        <div>1 cup of celery, sliced</div>
+                        <div class='gray'></div>
+                        <div>3 cups of green cabbage, sliced</div>
+                        <div class='gray'></div>
+                        <div>1 1/2 cups of carrots, julienned</div>
+                        <div class='gray'></div>
+                    </div>
+                    <div class='col-12 col-md-6 px-md-0'>
+                        <div>2/3 cups of green onions, chopped</div>
+                        <div class='gray'></div>
+                        <div>2 tbsp of ginger, minced</div>
+                        <div class='gray'></div>
+                        <div>4 tbsp of soy sauce</div>
+                        <div class='gray'></div>
+                        <div>2 tbsp of vegetable oil</div>
+                        <div class='gray'></div>
+                        <div>1 tbsp of sesame oil (optional)</div>
+                        <div class='gray'></div>
+                    </div>
+                </div>
+                <div class='col-12 d-block d-sm-none pb-3 px-3'>
+                    <hr>
+                </div>
+            </div>
+            <!-- / introduction -->
+            <div class='col-12 px-md-0 px-sm-4'>
+                <div class='border-top px-0'>
+                    <h4 class='pb-3'>Recipe Directions</h4>
+                    <div class='step'>
+                        <div class='num py-2'>Step #1</div>
+                        <div class='instruction'>
+                            <p><span style="font-size: 17px;"><strong>Cook the noodles:</strong></span></p>
+                            <p>- In a pot, bring about 6 cups of water to boil.&nbsp;</p>
+                            <p>- Add the chow mein and cook them according to the package instructions.&nbsp;</p>
+                            <p>- I cooked mine for about 5 minutes.&nbsp;</p>
+                            <p>- Drain the water and rinse the noodles under cold water.</p>
+                        </div>
+                    </div>
+
+                    <div class='step'>
+                        <div class='step-num'>
+                            <div class='num py-2'>Step #2</div>
+                        </div>
+                        <div class='instruction'>
+                            <p><span style="font-size: 17px;"><strong>Cook the chicken:</strong></span></p>
+                            <p>- Heat a wok or large saut&eacute; pan over high heat.&nbsp;</p>
+                            <p>- Swirl in 1 tablespoon of canola oil.&nbsp;</p>
+                            <p>- Saut&eacute; the chicken pieces for about 5 minutes, until they are nearly
+                                cooked.&nbsp;</p>
+                            <p>- Season with a tiny pinch of salt, and turn off the heat.&nbsp;</p>
+                            <p>- Transfer the chicken to a dish and wipe off the wok.</p>
+                        </div>
+                    </div>
+                    <div class='step'>
+                        <div class='step-num'>
+                            <div class='num py-2'>Step #3</div>
+                            <div class='instruction'>
+                                <p><span style="font-size: 17px;"><strong>Cook the vegetables:</strong></span></p>
+                                <p>- Get the wok on high heat again and add the remaining tablespoon of oil.&nbsp;</p>
+                                <p>- Add the onions and cook them for a minute.&nbsp;</p>
+                                <p>- Next, add the sliced pepper, carrots, and cabbage and cook them for 2 minutes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='step'>
+                        <div class='step-num'>
+                            <div class='num py-2'>Step #4</div>
+                            <div class='instruction'>
+                                <p><span style="font-size: 17px;"><strong>Combine remaining ingredients:</strong></span>
+                                </p>
+                                <p>- Get the chicken back to the wok and saut&eacute; with the vegetables for another
+                                    minute.</p>
+                                <p>- &nbsp;Finally, add the noodles and the sauce, and toss everything together.&nbsp;
+                                </p>
+                                <p>- Taste the noodles and adjust the seasoning to your liking.&nbsp;</p>
+                                <p>- Serve with sesame oil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5 py-2'>
+                        <form action="https://www.youtube.com/watch?v=LrOhfTvp0DQ" method="get" target="_blank"><button
+                            class="btn btn-primary btn-block site-cta">
+                            Click to Video</button>
+                    </form>
+                    </div>
+                </div>
+
+                <button onclick="complete('2')" class="footer">
+                    If you complete this recipe, please click here.
+                </button>
+                <!----------------------------------------------->
+                <!-- JS: Boostrap, Firebase, API related    -->
+                <!----------------------------------------------->
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous">
+                    </script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous">
+                    </script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous">
+                    </script>
+
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+                <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+                <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
+
+                <!--------------------------------------------------------------------->
+                <!-- JS files: Your own JavaScript functions included here           -->
+                <!--------------------------------------------------------------------->
+                <script src="scripts/recipe.js"></script>
+</body>
+
+</html>
