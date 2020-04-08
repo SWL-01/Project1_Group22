@@ -64,8 +64,8 @@
     <img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmw9yklita-Wo3seLZ7GFYv_QrKmuWAQb7sBkzk65Ze8m3D5jr&usqp=CAU"
       class="rounded-circle lag-fixed" id="profilePic">
-    <p id="username" class="lead"></p>
-    <p id="recipesInProgress"></p>
+    <p id="username">Please Login</p>
+    <p id="recipesInProgress">No recipes in progress!</p>
   </div>
   <!----------------------------------------------->
   <!--   JS: Boostrap, Firebase, API related     -->
@@ -96,8 +96,8 @@
 
   <script>
     let userid;
-    let recipeProgress = " ";
-    let completedRecipes = " ";
+    let recipeProgress = "Recipes inprogress:<br>";
+    let completedRecipes = "Recipes Completed:<br>";
 
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
@@ -117,24 +117,22 @@
           db.collection('users').doc(userid).collection('recipesLog').get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
               // doc.data() is never undefined for query doc snapshots
-              recipeProgress += "Inprogress Recipes:<br>"
-              if (doc.data().percentCompleted < 100) {
+              if (doc.data().percentCompleted != 100) {
                 ipRecipeName = doc.data().recipeName;
                 ipRecipeProgress = doc.data().percentCompleted;
                 ipRecipeID = doc.id;
-                recipeProgress += ipRecipeName + "<br>Finished " + ipRecipeProgress + "% of the recipe.<br><br>";
-                newLink = document.createElement('a');
+                recipeProgress += "<br>" + ipRecipeName + "<br>Finished " + ipRecipeProgress + "% of the recipe.<br><br>";
               }
               if(doc.data().percentCompleted == 100){
                 ipRecipeName = doc.data().recipeName;
                 ipRecipeID = doc.id;
-                recipeProgress += ipRecipeName
+                completedRecipes += ipRecipeName + "<br>";
               }
             });
             // stores recipe id into local storage
             localStorage.setItem('recipeID', ipRecipeID);
             console.log(ipRecipeID);
-            document.getElementById('recipesInProgress').innerHTML = recipeProgress
+            document.getElementById('recipesInProgress').innerHTML = (recipeProgress + completedRecipes);
           });
 
           console.log(userid);
