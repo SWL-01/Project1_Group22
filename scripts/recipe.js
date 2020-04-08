@@ -10,17 +10,24 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         if (user != null) {
             userID = user.uid;
-            update(userID);
         }
     } else {
         // if no user is signed in.
     }
 });
-function update(uID) {
-    db.collection('users').doc(uID).onSnapshot(function (snapshot2) {
-        snapshot2.data().recipesCompleted += 25;
-    });
+
+function udpate(uID) {
+    db.collection('users').doc(uID).onSnapshot(
+        function (snapshoting) {
+            console.log(snapshoting.data());
+            db.collection("users").doc(uID).set({
+                name: snapshoting.data().name,
+                email: snapshoting.data().name,
+                recipesCompleted: snapshoting.data().recipesCompleted + 1,
+            });
+        });
 }
+
 // Save recipe log
 function saveRecipe(recipeID) {
     let saved = false;
@@ -39,7 +46,6 @@ function saveRecipe(recipeID) {
         });
     }).then(function () {
         if (!saved) {
-
             // go to recipe doc in "recipe" collection
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
@@ -78,7 +84,6 @@ function complete(recipeID) {
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
                     console.log(snapshot.data());
-
                     db.collection('users').doc(userID)
                         .collection('recipesLog').doc(recipeID).set({
                             percentCompleted: 100,
@@ -86,6 +91,7 @@ function complete(recipeID) {
                         });
                     console.log(check);
                     window.alert("Congratulation! You complete this recipe!");
+                    udpate(userID);
                 }
             );
         }
