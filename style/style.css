@@ -55,24 +55,11 @@
 }
 
 /* RECIPES.HTML */
-#imgsize {
-    width: 288px;
-    height: 400px;
-}
-#imgsize2 {
-    width: 110%;
-    height: 40%;
-    position: relative;
-    left: -1vw;
-}
-#jumpsection {
+
+.jumpsection {
     background-color: #aecfc5;
 }
-.recipe {
-    width: 300px;
-    height: 500px;
-    text-decoration: "none";
-}
+
 #foodimg {
     height: 20rem;
 }
@@ -80,10 +67,6 @@
 #recipetitle {
     height: 4rem;
     text-align: center;
-}
-#sortbutton {
-    background-color: #27302f;
-    color: white;
 }
 
 #save-notice-r{
@@ -100,10 +83,6 @@
     height: 700px;
     max-width: 100%;
 }
-.step {
-    margin-left: auto;
-    margin-right: auto;
-}
 .footer {
     position: fixed;
     left: 0;
@@ -117,9 +96,15 @@
 .btn {
     background-color:#427d6d;
 }
-
 #recipeBtn{
     color: white;
+}
+.videoclass{
+    margin: auto;
+}
+#videoid {
+    width: 500px;
+    height: 430px;
 }
 
 /* COMMUNITY.HTML */

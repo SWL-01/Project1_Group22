@@ -99,30 +99,22 @@
                 English <p> </p>
 
             </div>
-
-            <div class='col-12 d-block d-sm-none pb-3 px-1 py-5'>
-                <hr>
-            </div>
             <img src="images/macncheese.jpg" id="titleimg">
 
             <!-- save this recipe button -->
-            <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5'>
+            <div class='col-12 col-sm-5 col-md-3 pl-md-5 py-2'>
                 <form class="button_to">
-                    <a id="recipeBtn" class="btn btn-primary btn-block site-cta btn"
-                        onclick="saveRecipe('0')" data-toggle="modal" data-target="#formModal">Save this recipe
+                    <a id="recipeBtn" class="btn btn-primary btn-block site-cta btn" onclick="saveRecipe('0')"
+                        data-toggle="modal" data-target="#formModal">Save this recipe
                     </a>
                 </form>
-            </div>
-            <div class='col-12 desc col-sm-10 col-md-9 px-3 px-md-0'>
-                <h6></h6>
             </div>
         </div>
         <div class='row'>
 
             <!-- ingredients -->
-            <div class='col-12 col-sm-7 col-md-9 border-right mb-sm-4 py-5'>
-                <div class='col-12 d-block d-sm-none pb-3 px-0'>
-
+            <div class='col-12 col-sm-7 col-md-9 mb-sm-4 py-5'>
+                <div class='px-1'>
                     <hr>
                 </div>
                 <div class='row'>
@@ -148,11 +140,11 @@
             </div>
 
             <!-- instructions -->
-            <div class='col-12 desc col-sm-10 col-md-9 px-3 px-md-0'>
+            <div class='col-12'>
                 <h6></h6>
             </div>
-            <div class='col-12 px-md-0 px-sm-4'>
-                <div class='border-top px-3'>
+            <div class='col-12'>
+                <div class='border-top'>
                     <h4 class='pb-3'>Recipe Directions</h4>
                     <div class='step'>
                         <div class='num py-2'>Step #1</div>
@@ -195,12 +187,10 @@
                 </div>
             </div>
 
-            <!-- video button -->
-            <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5'>
-                <form action="https://www.youtube.com/watch?v=YxVZuuxxXxk" method="get" target="_blank"><button
-                    class="btn btn-primary btn-block site-cta">
-                    Click to Video</button>
-            </form>
+            <!-- video iframe -->
+            <div class='py-2 videoclass'>
+                <iframe id="videoid" src="https://www.youtube.com/embed/YxVZuuxxXxk">
+                </iframe>
             </div>
 
             <!-- complete button -->
@@ -210,58 +200,57 @@
 
             <!-- save modal -->
             <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Save to recipe notice</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Save to recipe notice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
 
-                    <!-- modal body -->
-                    <div class="modal-body">
-                        <form>
-                            <!-- body section -->
-                            <div class="form-group">
-                                <label id="save-notice"></label>
-                            </div>
-                            <!-- buttons section -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Close</button>
-                            </div>
+                        <!-- modal body -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- body section -->
+                                <div class="form-group">
+                                    <label id="save-notice"></label>
+                                </div>
+                                <!-- buttons section -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!----------------------------------------------->
-            <!-- JS: Boostrap, Firebase, API related    -->
-            <!----------------------------------------------->
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                crossorigin="anonymous">
-                </script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                crossorigin="anonymous">
-                </script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                crossorigin="anonymous">
-                </script>
+                <!----------------------------------------------->
+                <!-- JS: Boostrap, Firebase, API related    -->
+                <!----------------------------------------------->
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous">
+                    </script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous">
+                    </script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous">
+                    </script>
 
-            <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-            <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-            <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+                <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+                <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
 
-            <!--------------------------------------------------------------------->
-            <!-- JS files: Your own JavaScript functions included here           -->
-            <!--------------------------------------------------------------------->
-            <script src="scripts/recipe.js"></script>
+                <!--------------------------------------------------------------------->
+                <!-- JS files: Your own JavaScript functions included here           -->
+                <!--------------------------------------------------------------------->
+                <script src="scripts/recipe.js"></script>
 </body>
 
 </html>

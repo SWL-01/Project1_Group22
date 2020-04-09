@@ -204,75 +204,73 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- video button -->
-                <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5 py-2'>
-                    <form action="https://www.youtube.com/watch?v=3qBjL_HGvco" method="get" target="_blank"><button
-                            class="btn btn-primary btn-block site-cta">
-                            Click to Video</button>
-                    </form>
-                </div>
+            <!-- video iframe -->
+            <div class='py-2 videoclass'>
+                <iframe id="videoid" src="https://www.youtube.com/embed/3qBjL_HGvco">
+                </iframe>
+            </div>
 
-                <!-- complete button -->
-                <button onclick="complete('4')" class="footer" data-toggle="modal" data-target="#formModal">
-                    If you complete this recipe, please click here.
-                </button>
+            <!-- complete button -->
+            <button onclick="complete('4')" class="footer" data-toggle="modal" data-target="#formModal">
+                If you complete this recipe, please click here.
+            </button>
 
-                <!-- save modal -->
-                <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Save to recipe notice</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+            <!-- save modal -->
+            <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Save to recipe notice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
 
-                            <!-- modal body -->
-                            <div class="modal-body">
-                                <form>
-                                    <!-- body section -->
-                                    <div class="form-group">
-                                        <label id="save-notice"></label>
-                                    </div>
-                                    <!-- buttons section -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-                            </div>
+                        <!-- modal body -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- body section -->
+                                <div class="form-group">
+                                    <label id="save-notice"></label>
+                                </div>
+                                <!-- buttons section -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!----------------------------------------------->
-                <!-- JS: Boostrap, Firebase, API related    -->
-                <!----------------------------------------------->
-                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                    crossorigin="anonymous">
+            <!----------------------------------------------->
+            <!-- JS: Boostrap, Firebase, API related    -->
+            <!----------------------------------------------->
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous">
                 </script>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                    crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous">
                 </script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                    crossorigin="anonymous">
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous">
                 </script>
 
-                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-                <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-                <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
+            <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+            <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+            <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
 
-                <!--------------------------------------------------------------------->
-                <!-- JS files: Your own JavaScript functions included here           -->
-                <!--------------------------------------------------------------------->
-                <script src="scripts/recipe.js"></script>
+            <!--------------------------------------------------------------------->
+            <!-- JS files: Your own JavaScript functions included here           -->
+            <!--------------------------------------------------------------------->
+            <script src="scripts/recipe.js"></script>
 </body>
 
 </html>
