@@ -16,7 +16,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
             );
 
-            // loop and check for recipes in progress   
+            // loop and check for recipes progress   
             db.collection('users').doc(userid).collection('recipesLog').get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
                     // doc.data() is never undefined for query doc snapshots
@@ -32,13 +32,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                         completedRecipes += ipRecipeName + "<br>";
                     }
                 });
-                // stores recipe id into local storage
-                localStorage.setItem('recipeID', ipRecipeID);
-                console.log(ipRecipeID);
-                document.getElementById('recipesInProgress').innerHTML = (recipeProgress + completedRecipes);
             });
-
-            console.log(userid);
         }
     } else {
         // No user is signed in.

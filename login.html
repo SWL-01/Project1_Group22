@@ -22,23 +22,10 @@
     <link href="style/style.css" rel="stylesheet">
 
 </head>
-<body>
+<body id="loginBody">
     <!----------------------->
     <!--  HTML Section -->
     <!----------------------->
-    <style>
-        body {
-            margin:10; 
-            padding:0; 
-            width:100%; 
-            height:100%
-        }
-        #background{
-            position:fixed;
-            width:100%; 
-            height:100%;
-        } 
-    </style>
     <div>
         <img id="background" src="images/Login-Background.jpg">
     </div>
@@ -121,7 +108,7 @@
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 //firebase.auth.PhoneAuthProvider.PROVIDER_ID
             ],
-            // Terms of service url.
+            // Terms of service url. Which don't exist right now.
             tosUrl: 'tos.html',
             // Privacy policy url.
             privacyPolicyUrl: 'privacy.html',
