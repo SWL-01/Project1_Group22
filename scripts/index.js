@@ -64,7 +64,7 @@ function personalizeRecipe(uID) {
             document.getElementById('jumbo-btn').href = "recipes.html";
         } else {
             document.getElementById('jumbo-p').innerHTML += "You have completed " + ipRecipeProgress + "% of the " + ipRecipeName + " recipe.";
-            document.getElementById('jumbo-btn').href = "recipe-" +ipRecipeName+ ".html"; // this goes to a specific recipe.
+            document.getElementById('jumbo-btn').href = "recipe-" + ipRecipeName + ".html"; // this goes to a specific recipe.
         }
     });
 }
