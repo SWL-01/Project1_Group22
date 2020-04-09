@@ -1,3 +1,6 @@
+// percentage to represent completion.
+const MAX_PERCENT = 100;
+
 // Get recipe value from firebase data collection
 let userID;
 
@@ -32,11 +35,9 @@ function saveRecipe(recipeID) {
 
         // loop and check for existing recipeID
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id);
             if (doc.id == recipeID) {
                 document.getElementById("save-notice").innerHTML = "This recipe is already saved.";
                 saved = true;
-                console.log("saved is now " + saved);
             }
         });
     }).then(function () {
@@ -44,14 +45,11 @@ function saveRecipe(recipeID) {
             // go to recipe doc in "recipe" collection
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
-                    console.log(snapshot.data());
-                    console.log(snapshot.data().name);
                     db.collection('users').doc(userID)
                         .collection('recipesLog').doc(recipeID).set({
                             percentCompleted: 0,
                             recipeName: snapshot.data().name
                         });
-                    console.log(saved);
                     document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
                 }
             );
@@ -65,26 +63,21 @@ function complete(recipeID) {
 
     db.collection('users').doc(userID).collection('recipeLog').get().then(function (querySnapshot2) {
         querySnapshot2.forEach(function (doc) {
-            console.log(doc.id);
             if (doc.id == recipeID) {
                 document.getElementById("save-notice").innerHTML = "This recipe is already completed.";
                 check = true;
-                console.log("Completiton is now " + check);
             }
         });
-
 
     }).then(function () {
         if (!check) {
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
-                    console.log(snapshot.data());
                     db.collection('users').doc(userID)
                         .collection('recipesLog').doc(recipeID).set({
-                            percentCompleted: 100,
+                            percentCompleted: MAX_PERCENT,
                             recipeName: snapshot.data().name
                         });
-                    console.log(check);
                     update(userID);
                     document.getElementById("save-notice").innerHTML = "Congratulations! You have completed this recipe!";
                 }

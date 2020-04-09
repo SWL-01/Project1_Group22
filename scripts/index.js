@@ -31,7 +31,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 function personalizeJumbo(uID) { 
     db.collection('users').doc(uID).onSnapshot(
         function (snapshot) {
-            console.log(snapshot.data()); 
             document.getElementById('jumbo-h').innerHTML = "Hello " + snapshot.data().name + ",";
             document.getElementById('jumbo-p').innerHTML = "You have completed " + snapshot.data().recipesCompleted + " recipes. <br>";
             document.getElementById('jumbo-btn').innerHTML = "Continue!";
@@ -59,11 +58,9 @@ function personalizeRecipe(uID) {
        
         // stores recipe id into local storage for later use.
         localStorage.setItem('recipeID', ipRecipeID);
-        console.log(ipRecipeID); // test log
        
         // personalization.
         if (ipRecipeID == undefined){
-            // document.getElementById('jumbo-p').innerHTML = "";
             document.getElementById('jumbo-btn').innerHTML = "Start!";
             document.getElementById('jumbo-btn').href = "recipes.html";
         } else {
@@ -82,11 +79,9 @@ function saveRecipe(recipeID) {
         
         // loop and check for existing recipeID
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id);
             if (doc.id == recipeID) {
                 document.getElementById("save-notice").innerHTML = "This recipe is already saved.";
                 saved = true;
-                console.log("saved is now " + saved);
             }
         });
     }).then(function(){
@@ -95,14 +90,11 @@ function saveRecipe(recipeID) {
             // go to recipe doc in "recipe" collection
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
-                    console.log(snapshot.data()); 
-                    console.log(snapshot.data().name);
                     db.collection('users').doc(userID)
                         .collection('recipesLog').doc(recipeID).set({
                             percentCompleted: 0,
                             recipeName: snapshot.data().name
                     });
-                    console.log(saved);
                 document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
                 }
             );

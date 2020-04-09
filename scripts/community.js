@@ -82,7 +82,6 @@ function showModal() {
             document.getElementById('post-cmt-time').innerHTML = "Time posted: " + time;
         }
     );
-    console.log(username + " opened the comment modal.");
 }
 
 // function to post a comment.
@@ -99,7 +98,6 @@ function postComment() {
         })
         .then(function(docRef){
             console.log("successful post. " + docRef.id)
-
         });
 }
 

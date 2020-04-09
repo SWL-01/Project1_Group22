@@ -1,4 +1,4 @@
-/* LOGIN STYLE */
+/* LOGIN.HTML */
 .login{
     top:25%;
     right:35%;
@@ -18,7 +18,7 @@
     height:100%
 }
 
-/* INDEX STYLE */
+/* INDEX.HTML */
 .carousel-text{
     color: black;
 }
@@ -54,7 +54,7 @@
     margin-bottom: -15px;
 }
 
-/*RECIPES STYLE */
+/* RECIPES.HTML */
 #imgsize {
     width: 288px;
     height: 400px;
@@ -90,7 +90,7 @@
     color: black;
 }
 
-/* RECIPE STYLE */
+/* RECIPE.HTML */
 
 #titleimg {
     display: block;
@@ -122,7 +122,7 @@
     color: white;
 }
 
-/* COMMUNITY STYLE */
+/* COMMUNITY.HTML */
 #view-btn, #post-btn{
     margin-bottom: -25px;
     width: 20vw;
@@ -133,7 +133,7 @@
     text-align: center;
 }
 
-/* PROFILE STYLE */
+/* PROFILE.HTML */
 #username{
     font-size:5vh;
     font-weight:bold;

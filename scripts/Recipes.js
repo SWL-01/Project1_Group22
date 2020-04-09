@@ -23,11 +23,8 @@ function saveRecipe(recipeID) {
         document.getElementById("save-notice-r").innerHTML = "This recipe is already saved.";
         // loop and check for existing recipeID
         querySnapshot.forEach(function (doc) {
-            console.log(doc.id);
             if (doc.id == recipeID) {
-                
                 saved = true;
-                console.log("saved is now " + saved);
             }
         });
     }).then(function () {
@@ -36,8 +33,6 @@ function saveRecipe(recipeID) {
             // go to recipe doc in "recipe" collection
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
-                    console.log(snapshot.data());
-                    console.log(snapshot.data().name);
                     db.collection('users').doc(userID)
                         .collection('recipesLog').doc(recipeID).set({
                             percentCompleted: 0,

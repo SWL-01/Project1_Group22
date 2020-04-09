@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
+    <title>Fresh Recipe: Chicken Fettuccine Alfredo</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    <!-- navigation bar -->
     <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Fresh Recipe</a>
@@ -37,10 +38,9 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home
-                            <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="Recipes.html">Recipes</a>
                     </li>
                     <li class="nav-item">
@@ -55,6 +55,7 @@
         </div>
     </nav>
 
+    <!-- Recipe Information -->
     <div class="jumbotron">
         <div class='row'>
             <div class='col-12 col-sm-7 col-md-9 border-right px-md-0 titlec'>
@@ -103,10 +104,11 @@
             </div>
             <img src="images/chickenalfredo.jpg" id="titleimg">
 
+            <!-- save this recipe button -->
             <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5'>
                 <form class="button_to">
                     <a id="recipeBtn" class="btn btn-primary btn-block site-cta btn"
-                        onclick="saveRecipe('1')" data-toggle="modal" data-target="#formModal">Save recipe
+                        onclick="saveRecipe('1')" data-toggle="modal" data-target="#formModal">Save this recipe
                     </a>
                 </form>
             </div>
@@ -115,6 +117,8 @@
             </div>
         </div>
         <div class='row'>
+
+            <!-- ingredients -->
             <div class='col-12 col-sm-7 col-md-9 border-right mb-sm-4 py-5'>
                 <div class='col-12 d-block d-sm-none pb-3 border-top px-3'>
 
@@ -149,7 +153,8 @@
                     <hr>
                 </div>
             </div>
-            <!-- / introduction -->
+
+            <!-- instructions -->
             <div class='col-12 px-md-0 px-sm-4'>
                 <div class='border-top px-0'>
                     <h4 class='pb-3'>Recipe Directions</h4>
@@ -221,15 +226,17 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5 py-2'>
-                        <form action="https://www.youtube.com/watch?v=0VEbeHpalvI" method="get" target="_blank"><button
-                            class="btn btn-primary btn-block site-cta">
-                            Click to Video</button>
-                    </form>
-                    </div>
                 </div>
 
+                <!-- video button -->
+                <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5 py-2'>
+                    <form action="https://www.youtube.com/watch?v=0VEbeHpalvI" method="get" target="_blank"><button
+                        class="btn btn-primary btn-block site-cta">
+                        Click to Video</button>
+                </form>
+                </div>
+
+                <!-- complete button -->
                 <button onclick="complete('1')" class="footer" data-toggle="modal" data-target="#formModal">
                     If you complete this recipe, please click here.
                 </button>
