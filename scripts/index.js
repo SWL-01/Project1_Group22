@@ -34,7 +34,7 @@ function personalizeJumbo(uID) {
             document.getElementById('jumbo-h').innerHTML = "Hello " + snapshot.data().name + ",";
             document.getElementById('jumbo-p').innerHTML = "You have completed " + snapshot.data().recipesCompleted + " recipes. <br>";
             document.getElementById('jumbo-btn').innerHTML = "Continue!";
-            document.getElementById('jumbo-btn').href = "recipe.html"; // this goes to a specific recipe.
+            document.getElementById('jumbo-btn').href = "recipe-" + snapeshot.data().recipeName // this goes to a specific recipe.
         }
     );
 }
@@ -65,6 +65,7 @@ function personalizeRecipe(uID) {
             document.getElementById('jumbo-btn').href = "recipes.html";
         } else {
             document.getElementById('jumbo-p').innerHTML += "You have completed " + ipRecipeProgress + "% of the " + ipRecipeName + " recipe.";
+            document.getElementById('jumbo-btn').href = "recipe-" + ipRecipeName + ".html";
         }
     });
 }
