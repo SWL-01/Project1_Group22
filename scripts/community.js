@@ -51,10 +51,10 @@ function loadComments(recipeName) {
     document.getElementById("comment-table").innerHTML = "";
     document.getElementById("current-recipe-view").innerHTML = recipeName;
 
-    db.collection('comments').doc(recipeName).collection('comments').onSnapshot(function(snapshot) {
+    db.collection('comments').doc(recipeName).collection('comments').onSnapshot(function (snapshot) {
 
         // real time comment updates
-        snapshot.docChanges().forEach(function(change) {
+        snapshot.docChanges().forEach(function (change) {
             if (change.type === "added") {
 
                 // adds all comments relating to recipeID.
@@ -96,7 +96,7 @@ function postComment() {
             comment: commentText,
             posted: firebase.firestore.Timestamp.fromDate(time)
         })
-        .then(function(docRef){
+        .then(function (docRef) {
             console.log("successful post. " + docRef.id)
         });
 }

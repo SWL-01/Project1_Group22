@@ -8,10 +8,10 @@ let userID;
 // performs personalization if a user is logged in.
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        
+
         // if user is signed in, do...
         let user = firebase.auth().currentUser;
-        
+
         if (user != null) {
             userID = user.uid;
 
@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 // function to personalize the jumbo element.
 // greeting to current user.
-function personalizeJumbo(uID) { 
+function personalizeJumbo(uID) {
     db.collection('users').doc(uID).onSnapshot(
         function (snapshot) {
             document.getElementById('jumbo-h').innerHTML = "Hello " + snapshot.data().name + ",";
@@ -42,7 +42,7 @@ function personalizeJumbo(uID) {
 // function to personalize the jumbo element.
 // continue a recipe that is in progress.
 function personalizeRecipe(uID) {
-    db.collection('users').doc(uID).collection('recipesLog').get().then(function (querySnapshot) {                
+    db.collection('users').doc(uID).collection('recipesLog').get().then(function (querySnapshot) {
         let ipRecipeName;
         let ipRecipeProgress;
         let ipRecipeID;
@@ -55,12 +55,12 @@ function personalizeRecipe(uID) {
                 ipRecipeID = doc.id;
             }
         });
-       
+
         // stores recipe id into local storage for later use.
         localStorage.setItem('recipeID', ipRecipeID);
-       
+
         // personalization.
-        if (ipRecipeID == undefined){
+        if (ipRecipeID == undefined) {
             document.getElementById('jumbo-btn').innerHTML = "Start!";
             document.getElementById('jumbo-btn').href = "recipes.html";
         } else {
@@ -73,10 +73,10 @@ function personalizeRecipe(uID) {
 function saveRecipe(recipeID) {
     let saved = false;
     document.getElementById("save-notice").innerHTML = "";
-   
+
     // check if recipeID exists in users recipesLog
-    db.collection('users').doc(userID).collection('recipesLog').get().then(function (querySnapshot) {                
-        
+    db.collection('users').doc(userID).collection('recipesLog').get().then(function (querySnapshot) {
+
         // loop and check for existing recipeID
         querySnapshot.forEach(function (doc) {
             if (doc.id == recipeID) {
@@ -84,8 +84,8 @@ function saveRecipe(recipeID) {
                 saved = true;
             }
         });
-    }).then(function(){
-        if(!saved) {
+    }).then(function () {
+        if (!saved) {
 
             // go to recipe doc in "recipe" collection
             db.collection('recipes').doc(recipeID).onSnapshot(
@@ -94,8 +94,8 @@ function saveRecipe(recipeID) {
                         .collection('recipesLog').doc(recipeID).set({
                             percentCompleted: 0,
                             recipeName: snapshot.data().name
-                    });
-                document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
+                        });
+                    document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
                 }
             );
         }
