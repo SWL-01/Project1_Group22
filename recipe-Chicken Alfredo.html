@@ -104,8 +104,10 @@
             <img src="images/chickenalfredo.jpg" id="titleimg">
 
             <div class='col-12 col-sm-5 col-md-3 get-started-cta pl-md-5'>
-                <form class="button_to"><button class="btn btn-primary btn-block site-cta btn"
-                        onclick="saveRecipe('1')">Save recipe</button>
+                <form class="button_to">
+                    <a id="recipeBtn" class="btn btn-primary btn-block site-cta btn"
+                        onclick="saveRecipe('1')" data-toggle="modal" data-target="#formModal">Save recipe
+                    </a>
                 </form>
             </div>
             <div class='col-12 desc col-sm-10 col-md-9 px-3 px-md-0'>
@@ -228,9 +230,38 @@
                     </div>
                 </div>
 
-                <button onclick="complete('1')" class="footer">
+                <button onclick="complete('1')" class="footer" data-toggle="modal" data-target="#formModal">
                     If you complete this recipe, please click here.
                 </button>
+
+                <!-- save modal -->
+                <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Save to recipe notice</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <!-- modal body -->
+                            <div class="modal-body">
+                                <form>
+                                    <!-- body section -->
+                                    <div class="form-group">
+                                        <label id="save-notice"></label>
+                                    </div>
+                                    <!-- buttons section -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!----------------------------------------------->
                 <!-- JS: Boostrap, Firebase, API related    -->
                 <!----------------------------------------------->

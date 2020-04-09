@@ -56,25 +56,9 @@
         </div>
     </nav>
 
-    <div class="jumbotron" id="jumpsection">
-        <div class="container col-5 py-1">
-            <img src="images/cooking-alone.jpg" class="card-img-top" id="imgsize2">
-            <div class="row">
-                <div class='col-12 py-2'>
-                    <div id="recipetitle">
-                        <h2> Get fresh & delicious recipes! </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="py-10">
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
-                id="sortbutton">Popular</button>
-            <div class="dropdown-menu">
-                <button class="dropdown-item"> Popular</button>
-                <button class="dropdown-item" onclick="sort()">Alphabetical</button>
-            </div>
-        </div>-->
+    <!-- menu container -->
+    <div id="jumbo" class="jumbotron">
+        <h1 id="jumbo-h" class="display-5">Get fresh & delicious recipes!</h1>
     </div>
 
     <div class="container col-7 py-3">
@@ -136,7 +120,7 @@
                     <div class="card-body">
                         <a href="recipe-mac&cheese.html" class="card-link">View more</a>
                         <a href="#save-recipe0" id="save-recipe0" data-toggle="modal" data-target="#formModal"
-                            onclick="saveRecipe('0')" class="card-link">Save to
+                            onclick="saveRecipe('0')" class="card-link" data-toggle="modal" data-target="#formModal">Save to
                             recipes</a>
                     </div>
                 </div>
@@ -198,7 +182,7 @@
                     <div class="card-body">
                         <a href="recipe-Chicken Alfredo.html" class="card-link">View more</a>
                         <a href="#save-recipe1" id="save-recipe1" data-toggle="modal" data-target="#formModal"
-                            onclick="saveRecipe('1')" class="card-link">Save to
+                            onclick="saveRecipe('1')" class="card-link" data-toggle="modal" data-target="#formModal">Save to
                             recipes</a>
                     </div>
                 </div>
@@ -258,7 +242,7 @@
                     <div class="card-body">
                         <a href="recipe-chicken chow.html" class="card-link">View more</a>
                         <a href="#save-recipe2" id="save-recipe2" data-toggle="modal" data-target="#formModal"
-                            onclick="saveRecipe('2')" class="card-link">Save to
+                            onclick="saveRecipe('2')" class="card-link" data-toggle="modal" data-target="#formModal">Save to
                             recipes</a>
                     </div>
                 </div>
@@ -319,7 +303,7 @@
                     <div class="card-body">
                         <a href="recipe-bulgogi.html" class="card-link">View more</a>
                         <a href="#save-recipe4" id="save-recipe4" data-toggle="modal" data-target="#formModal"
-                            onclick="saveRecipe('4')" class="card-link">Save to
+                            onclick="saveRecipe('4')" class="card-link" data-toggle="modal" data-target="#formModal">Save to
                             recipes</a>
                     </div>
                 </div>
@@ -354,28 +338,54 @@
                     </div>
                 </div>
 
-                <!----------------------------------------------->
-                <!-- JS: Boostrap, Firebase, API related    -->
-                <!----------------------------------------------->
-                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                    crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                    crossorigin="anonymous"></script>
+                <!-- save modal -->
+                <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Save to recipe notice</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
-                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-                <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-                <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
-                <script src="scripts/Recipes.js"></script>
+                            <!-- modal body -->
+                            <div class="modal-body">
+                                <form>
+                                    <!-- body section -->
+                                    <div class="form-group">
+                                        <label id="save-notice-r"></label>
+                                    </div>
+                                    <!-- buttons section -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!----------------------------------------------->
+                    <!-- JS: Boostrap, Firebase, API related    -->
+                    <!----------------------------------------------->
+                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                        crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                        crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                        crossorigin="anonymous"></script>
 
-
-
+                    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-auth.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+                    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+                    <script src="scripts/Firebase_Api_FreshRecipe.js"> </script>
+                    <script src="scripts/Recipes.js"></script>
 </body>
 
 </html>

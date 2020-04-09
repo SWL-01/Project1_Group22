@@ -75,6 +75,10 @@
     color: white;
 }
 
+#save-notice-r{
+    color: black;
+}
+
 /* RECIPE STYLE */
 
 #titleimg {
@@ -102,14 +106,22 @@
 .btn {
     background-color:#427d6d;
 }
+
+#recipeBtn{
+    color: white;
+}
+
 /* COMMUNITY STYLE */
 #view-btn, #post-btn{
-    margin-bottom: -25px;;
+    margin-bottom: -25px;
+    width: 20vw;
+    font-size: 1.5vw;
 }
 
 #current-recipe-view{
     text-align: center;
 }
+
 /* PROFILE STYLE */
 #username{
     font-size:5vh;

@@ -1,3 +1,5 @@
+let userID;
+
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
 
@@ -18,19 +20,19 @@ function saveRecipe(recipeID) {
 
     // check if recipeID exists in users recipesLog
     db.collection('users').doc(userID).collection('recipesLog').get().then(function (querySnapshot) {
-
+        document.getElementById("save-notice-r").innerHTML = "This recipe is already saved.";
         // loop and check for existing recipeID
         querySnapshot.forEach(function (doc) {
             console.log(doc.id);
             if (doc.id == recipeID) {
-                document.getElementById("save-notice").innerHTML = "This recipe is already saved.";
+                
                 saved = true;
                 console.log("saved is now " + saved);
             }
         });
     }).then(function () {
         if (!saved) {
-
+            document.getElementById("save-notice-r").innerHTML = "This recipe has been saved.";
             // go to recipe doc in "recipe" collection
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
@@ -41,8 +43,6 @@ function saveRecipe(recipeID) {
                             percentCompleted: 0,
                             recipeName: snapshot.data().name
                         });
-                    console.log(saved);
-                    document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
                 }
             );
         }

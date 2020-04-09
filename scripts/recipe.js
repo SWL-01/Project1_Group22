@@ -16,16 +16,11 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
-function udpate(uID) {
-    db.collection('users').doc(uID).onSnapshot(
-        function (snapshoting) {
-            console.log(snapshoting.data());
-            db.collection("users").doc(uID).set({
-                name: snapshoting.data().name,
-                email: snapshoting.data().name,
-                recipesCompleted: snapshoting.data().recipesCompleted + 1,
-            });
-        });
+// increments recipesCompleted field of a user.
+function update(uID) {
+    db.collection('users').doc(uID).update({
+        recipesCompleted: firebase.firestore.FieldValue.increment(1)
+    });
 }
 
 // Save recipe log
@@ -39,7 +34,7 @@ function saveRecipe(recipeID) {
         querySnapshot.forEach(function (doc) {
             console.log(doc.id);
             if (doc.id == recipeID) {
-                window.alert("This recipe is already saved.");
+                document.getElementById("save-notice").innerHTML = "This recipe is already saved.";
                 saved = true;
                 console.log("saved is now " + saved);
             }
@@ -57,7 +52,7 @@ function saveRecipe(recipeID) {
                             recipeName: snapshot.data().name
                         });
                     console.log(saved);
-                    window.alert("This recipe has been saved.");
+                    document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
                 }
             );
         }
@@ -72,7 +67,7 @@ function complete(recipeID) {
         querySnapshot2.forEach(function (doc) {
             console.log(doc.id);
             if (doc.id == recipeID) {
-                window.alert("This recipe is already completed.");
+                document.getElementById("save-notice").innerHTML = "This recipe is already completed.";
                 check = true;
                 console.log("Completiton is now " + check);
             }
@@ -90,8 +85,8 @@ function complete(recipeID) {
                             recipeName: snapshot.data().name
                         });
                     console.log(check);
-                    window.alert("Congratulation! You complete this recipe!");
-                    udpate(userID);
+                    update(userID);
+                    document.getElementById("save-notice").innerHTML = "Congratulations! You have completed this recipe!";
                 }
             );
         }
