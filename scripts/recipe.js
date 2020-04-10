@@ -63,7 +63,7 @@ function complete(recipeID) {
 
     db.collection('users').doc(userID).collection('recipeLog').get().then(function (querySnapshot2) {
         querySnapshot2.forEach(function (doc) {
-            if (doc.id == recipeID) {
+            if (doc.id === recipeID) {
                 document.getElementById("save-notice").innerHTML = "This recipe is already completed.";
                 check = true;
             }
