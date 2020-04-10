@@ -1,5 +1,5 @@
 <!-- COMP 1800 Projects 1 -->
-LAST UPDATE: April 9, 2020. 2:17 PM
+LAST UPDATE: April 9, 2020. 4:50 PM
 
 BCIT CST, Team 22, Set 1C.
 
@@ -12,30 +12,21 @@ References:
 - https://www.westside.social/food-background-food-concept-with-various-tasty-fresh-ingredients-for-cooking-italian-food-ingredients-view-from-above-with-copy-space_1220-1491-3/
 - https://icons.getbootstrap.com/
 
-For each page of cook directions, we used these website
+For each page of cook directions and images, we used these websites:
+- Chicken Fettucine Alfredo: https://natashaskitchen.com/moms-chicken-fettuccine-alfredo/
 
-    Chicken Fettucine Alfredo
-- https://natashaskitchen.com/moms-chicken-fettuccine-alfredo/
+- Macaroni and Cheese: https://www.cookingclassy.com/mac-and-cheese/
 
-    Macaroni and Cheese
-- https://www.cookingclassy.com/mac-and-cheese/
-
-    Chicken Chow Mein
-- https://www.cookingclassy.com/chicken-chow-mein/
-
-    Korean Beef Bulgogi
-- https://www.koreanbapsang.com/bulgogi-korean-bbq-beef/
-
-For each page of introductive videos, we used these youtube links
+- Chicken Chow Mein: https://www.cookingclassy.com/chicken-chow-mein/
     
-    Macaroni and Cheese
-- https://www.youtube.com/embed/YxVZuuxxXxk
+- Korean Beef Bulgogi: https://www.koreanbapsang.com/bulgogi-korean-bbq-beef/
 
-    Chicken Fettucine Alfredo
-- https://www.youtube.com/embed/0VEbeHpalvI
+For each page of instructive videos, we used these youtube links:
 
-    Chicken Chow Mein
-- https://www.youtube.com/embed/LrOhfTvp0DQ
+- Macaroni and Cheese: https://www.youtube.com/embed/YxVZuuxxXxk
 
-    Korean Beef Bulgogi
-- https://www.youtube.com/embed/3qBjL_HGvco
+- Chicken Fettucine Alfredo: https://www.youtube.com/embed/0VEbeHpalvI
+    
+- Chicken Chow Mein: https://www.youtube.com/embed/LrOhfTvp0DQ
+
+- Korean Beef Bulgogi: https://www.youtube.com/embed/3qBjL_HGvco
