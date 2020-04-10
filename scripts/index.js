@@ -76,7 +76,6 @@ function saveRecipe(recipeID) {
    
     // check if recipeID exists in users recipesLog
     db.collection('users').doc(userID).collection('recipesLog').get().then(function (querySnapshot) {                
-        
         // loop and check for existing recipeID
         querySnapshot.forEach(function (doc) {
             if (doc.id == recipeID) {
@@ -94,8 +93,8 @@ function saveRecipe(recipeID) {
                         .collection('recipesLog').doc(recipeID).set({
                             percentCompleted: 0,
                             recipeName: snapshot.data().name
-                    });
-                document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
+                        });
+                        document.getElementById("save-notice").innerHTML = "This recipe has been saved.";
                 }
             );
         }

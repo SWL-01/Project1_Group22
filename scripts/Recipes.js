@@ -17,19 +17,20 @@ firebase.auth().onAuthStateChanged(function (user) {
 // function to save a recipe to recipeLogs
 function saveRecipe(recipeID) {
     let saved = false;
+    document.getElementById("save-notice-r").innerHTML = "";
 
     // check if recipeID exists in users recipesLog
     db.collection('users').doc(userID).collection('recipesLog').get().then(function (querySnapshot) {
-        document.getElementById("save-notice-r").innerHTML = "This recipe is already saved.";
         // loop and check for existing recipeID
         querySnapshot.forEach(function (doc) {
             if (doc.id == recipeID) {
+                document.getElementById("save-notice-r").innerHTML = "This recipe is already saved.";
                 saved = true;
             }
         });
     }).then(function () {
         if (!saved) {
-            document.getElementById("save-notice-r").innerHTML = "This recipe has been saved.";
+            
             // go to recipe doc in "recipe" collection
             db.collection('recipes').doc(recipeID).onSnapshot(
                 function (snapshot) {
@@ -38,6 +39,7 @@ function saveRecipe(recipeID) {
                             percentCompleted: 0,
                             recipeName: snapshot.data().name
                         });
+                        document.getElementById("save-notice-r").innerHTML = "This recipe has been saved.";
                 }
             );
         }
