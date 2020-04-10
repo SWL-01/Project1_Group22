@@ -74,13 +74,16 @@
 }
 
 /* RECIPE.HTML */
+#recipe-title{
+    margin-top: 20px;
+}
 
 #titleimg {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 600px;
-    height: 700px;
+    height: 600px;
     max-width: 100%;
 }
 .footer {
@@ -103,8 +106,8 @@
     margin: auto;
 }
 #videoid {
-    width: 500px;
-    height: 430px;
+    width: 400px;
+    height: 330px;
 }
 
 /* COMMUNITY.HTML */
